@@ -2,19 +2,20 @@ This is a group project of the Software Engineering course - GSU
 
 # Entertainment Finder
 Have you ever had trouble finding a TV show or movie to watch or just don't have the time to go through the reviews for everything? Here lies our repository dedicated to helping you find something right now.
-# Features  
-- Welcome Page  
-- Login (with Google Sign In Option or DB)  
-- Sign Up  
-- Popular Movies  
-- Top Rated Movies  
-- Search Movies Based off User Input
-- Details/Description of Movies  
-- Popularity of Movies  
-- Give Your Opinion on a Movie and Rate It (Stars/Comments)   
-- Profile Information  
-- Settings  
-- Contact Function
+# Features   
+- Sign In Page
+- Sign Up Page
+- Popular Movies Page
+- Top Rated Movies Page
+- Search Function
+- Details Movies Page  
+- Favorite Function  
+- Rating Function
+- Comment Function
+- Filter Movies Page
+- Favorite Movies Page 
+- Contact Page
+- Settings Page 
 
 # Technologies
 - Python
@@ -110,14 +111,3 @@ http://bestmoviesreview.herokuapp.com/login
 # b. What are known problems (still existing), if any, with your project? (Sprint 2)
 - Mock tests and Unmocked tests were an issue because it was hard to create the test and giving us the desired output. Especially when getting data from the API, it is hard to get what you want specifically because it just gives a bunch of data in the order they want it and the amount of data can very for different queries. We would have to develop different tests for each scenario.  
 - It was hard to improve the app since most of the functions were developed and the styling throughout the App was uniform. 
-
-# Images
-![Sign In Page](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/signin.png)
-![Sign Up Page](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/signup.png)
-![Home Page - Popular Movie Page](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/popular_movies.jpg)
-![Top Rated Movie Page](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/top_rated_movies.png)
-![Search Page - result](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/search_result.png)
-![Search Page - no result](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/search_no_result.png)
-![Detail Page](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/detail.png)
-![Contact Page](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/contact.png)
-![Setting Page](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/settings.png)
