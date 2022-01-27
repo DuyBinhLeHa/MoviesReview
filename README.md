@@ -112,12 +112,12 @@ http://bestmoviesreview.herokuapp.com/login
 - It was hard to improve the app since most of the functions were developed and the styling throughout the App was uniform. 
 
 # Images
-![Sign In Page](https://github.com/DuyBinhLeHa/MoviesReview/tree/main/imagesmd/signin.png)
-![Sign Up Page](https://github.com/DuyBinhLeHa/MoviesReview/tree/main/imagesmd/signup.png)
-![Home Page - Popular Movie Page](https://github.com/DuyBinhLeHa/MoviesReview/tree/main/imagesmd/popular_movies.jpg)
-![Top Rated Movie Page](https://github.com/DuyBinhLeHa/MoviesReview/tree/main/imagesmd/top_rated_movies.png)
-![Search Page - result](https://github.com/DuyBinhLeHa/MoviesReview/tree/main/imagesmd/search_result.png)
-![Search Page - no result](https://github.com/DuyBinhLeHa/MoviesReview/tree/main/imagesmd/search_no_result.png)
-![Detail Page](https://github.com/DuyBinhLeHa/MoviesReview/tree/main/imagesmd/detail.png)
-![Contact Page](https://github.com/DuyBinhLeHa/MoviesReview/tree/main/imagesmd/contact.png)
-![Setting Page](https://github.com/DuyBinhLeHa/MoviesReview/tree/main/imagesmd/settings.png)
+![Sign In Page](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/signin.png)
+![Sign Up Page](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/signup.png)
+![Home Page - Popular Movie Page](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/popular_movies.jpg)
+![Top Rated Movie Page](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/top_rated_movies.png)
+![Search Page - result](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/search_result.png)
+![Search Page - no result](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/search_no_result.png)
+![Detail Page](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/detail.png)
+![Contact Page](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/contact.png)
+![Setting Page](https://github.com/DuyBinhLeHa/MoviesReview/blob/main/imagesmd/settings.png)
