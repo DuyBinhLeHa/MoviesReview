@@ -1,0 +1,14 @@
+Flask
+requests
+python-dotenv
+flask-login
+psycopg2-binary
+Flask-SQLAlchemy
+google-auth-oauthlib
+google-auth
+flask_cors
+flask_restful
+cachecontrol
+pyjwt
+pathlib
+requests

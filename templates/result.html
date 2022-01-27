@@ -1,0 +1,55 @@
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<title>Dashboard</title>
+</head>
+    <body>
+        <div id="page"></div>
+
+        <center><h2>Spotify Finder Dashboard {{ username }} </h2>
+
+          My Spotify Library <br><br>
+            <h3 style="text-align">{{artists[0]}}</h3>
+            <div class="row">
+                <div class="col">
+                    <br>
+                    <br>
+                    <br>
+                    <h3>Song: {{songs[0]}}</h3>
+                    <h3>Album: {{albums[0]}}</h3>
+                    
+                    <p class="aligncenter"></p>
+                    <img src="{{artistArt[0]}}" text-align="center" class="center" alt="artistImg" />
+                </p>
+
+              <audio controls style="width: 100%">
+                <source src="{{previewURLs[0]}}" />
+              </audio>
+              <br>
+              <br>
+              <br>
+            </div>
+            <button type="button" text-align="center" class="favbutt">
+                <a href="{{URL1}}" text-align="center" style="color: rgb(0, 0, 0);"> 
+                    Genius Link 
+                </a>
+            </button>
+          </div>
+
+              <br>
+              <br>
+              <br>
+              <form class="userinput" method="GET" action="/">
+                <label for="artist_id">Gimme anotha Artist ID I can Look Up Shlimere:</label>
+                <input type="text" id="artist_id" name="artist_id" placeholder="spotify.com/artist/<artist-id>" class="artist_ID">
+                <button type="button" onclick="result();">Let's Find that Artist for Ya</button> <br><br>
+                  <input type="text" placeholder="Search..">
+                  <button type="submit"></button>
+              </form>
+                <button type="button">Save to Playlist</button>
+                <button type="button">Reset</button>
+              </form>
+            </center>
+        </div>        
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login Success Window</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body>
+  <a href="/main">Click Here to go to the Dashboard</a>
+</body>
+
+<script>
+  function successWindow() {
+    alert("You have successfully logged in!");
+  }
+  window.onload = successWindow()
+</script>
+
+</html>
