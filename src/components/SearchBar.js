@@ -1,4 +1,4 @@
-/* eslint-disable no-undef, no-alert */
+/* eslint-disable no-alert */
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -21,7 +21,7 @@ function SearchBar() {
       <input className="form-control form-control-dark w-100" ref={textInput} type="text" placeholder="Search" aria-label="Search" />
       <ul className="navbar-nav px-3">
         <li className="nav-item text-nowrap">
-          <button className="searchMovie" onClick={searchMovie} type="submit">Search</button>
+          <button className="btn btn-primary" onClick={searchMovie} type="submit">Search</button>
         </li>
       </ul>
     </nav>

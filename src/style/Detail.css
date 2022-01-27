@@ -125,10 +125,15 @@
   }
 }
 
-textarea {
-  margin: 10px 0 !important;
+.textarea {
+  margin: 10px 0;
 }
 
-input {
+.likedMovie {
+  height: 38px;
+  padding: 0 30px;
   margin: 10px 0;
+  font-size: 11px;
+  background-color: transparent;
+  border-radius: 6px;
 }

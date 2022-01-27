@@ -6,6 +6,8 @@ import App from './App';
 import TopRated from "./components/TopRated";
 import Search from './components/Search';
 import Detail from "./components/Detail";
+import Filter from "./components/Filter";
+import Favorite from './components/Favorite';
 import Contact from './components/Contact';
 import Settings from './components/Settings';
 import reportWebVitals from './reportWebVitals';
@@ -17,6 +19,8 @@ ReactDOM.render(
       <Route path="/top_rated" element={<TopRated />} />
       <Route path="/search/:movieName" element={<Search />} />
       <Route path="/detail/:movieID" element={<Detail />} />
+      <Route path="/filter" element={<Filter />} />
+      <Route path="/favorite" element={<Favorite />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/settings" element={<Settings />} />
     </Routes>

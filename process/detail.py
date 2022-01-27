@@ -15,7 +15,9 @@ def get_detail(username):
     (
         poster_path,
         title,
+        vote_average,
         release_date,
+        popularity,
         runtime,
         genres,
         overview,
@@ -24,7 +26,9 @@ def get_detail(username):
     detail_movie = {
         "poster_path": poster_path,
         "title": title,
+        "vote_average": vote_average,
         "release_date": release_date,
+        "popularity": popularity,
         "runtime": runtime,
         "genres": genres,
         "overview": overview,

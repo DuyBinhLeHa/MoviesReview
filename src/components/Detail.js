@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactStars from 'react-rating-stars-component';
@@ -13,6 +12,35 @@ function Detail() {
   const [ratingMovie, setRatingMovie] = useState(0);
   const [avgRating, setAvgRating] = useState(0);
   const [newComment, setNewComment] = useState([]);
+  const [liked, setLiked] = useState(false);
+
+  const toggleLiked = () => {
+    if (liked === false) {
+      fetch('/liked', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          movie_id: movieID,
+          poster_path: detailMovie.poster_path,
+          title: detailMovie.title,
+          vote_average: detailMovie.vote_average,
+          release_date: detailMovie.release_date,
+          popularity: detailMovie.popularity,
+        }),
+      });
+    } else {
+      fetch('/unliked', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ movie_id: movieID }),
+      });
+    }
+    setLiked(!liked);
+  };
 
   useEffect(() => {
     fetch('/detail', {
@@ -24,6 +52,16 @@ function Detail() {
     }).then((response) => response.json()).then((data) => {
       const result = JSON.parse(data.detail);
       setDetailMovie(result);
+    });
+
+    fetch('/check_liked', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ movie_id: movieID }),
+    }).then((response) => response.json()).then((data) => {
+      setLiked(data.check);
     });
 
     fetch('/avg_rating', {
@@ -99,7 +137,7 @@ function Detail() {
   }
 
   return (
-    <div className="Deatail">
+    <div className="Detail">
       <div className="container p-0">
         <ToolBar />
         <div className="container-fluid">
@@ -131,14 +169,22 @@ function Detail() {
               <hr />
 
               <div>
+                <div>Favorite:</div>
+                <button className="likedMovie" onClick={toggleLiked} type="button">
+                  {liked ? (
+                    <img src="https://img.icons8.com/color/24/000000/filled-like.png" alt="" />
+                  ) : (
+                    <img src="https://img.icons8.com/material-outlined/24/000000/like--v1.png" alt="" />
+                  )}
+                </button>
                 <div>Rating:</div>
                 <ReactStars count={5} onChange={ratingChanged} size={24} activeColor="#ffd700" />
                 <div>Comment:</div>
                 <div className="textarea">
-                  <textarea cols="110" ref={textInput} placeholder="Add comment..." />
+                  <textarea cols="110" rows="5" ref={textInput} placeholder="Add comment..." />
                 </div>
                 <div className="btn">
-                  <button className="addComment" onClick={addComment} type="submit">Post</button>
+                  <button className="btn btn-primary" onClick={addComment} type="submit">Post</button>
                 </div>
               </div>
 

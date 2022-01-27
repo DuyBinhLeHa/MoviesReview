@@ -1,27 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../style/bootstrap.min.css';
-import '../App.css';
-import SearchBar from './SearchBar';
+import '../style/Filter.css';
+import ToolBar from './Toolbar';
 import NavigationMenu from './NavigationMenu';
 
-function TopRated() {
-  const args = JSON.parse(document.getElementById('data').text);
+function Filter() {
+  const [genre, setGenre] = useState('');
+  const [filterMovie, setFilterMovie] = useState([]);
+
+  const filter = () => {
+    fetch('/filter', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ movie_genre: genre }),
+    }).then((response) => response.json()).then((data) => {
+      const result = JSON.parse(data.filter);
+      setFilterMovie(result.filter_movie);
+    });
+  };
 
   return (
-    <div className="TopRated">
+    <div className="Favorite">
       <div className="container p-0">
-        <SearchBar />
+        <ToolBar />
         <div className="container-fluid">
           <div className="row">
             <NavigationMenu />
             <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4 movie_list">
               <div className="pt-8 pb-2 mb-3 border-bottom">
                 <div className="row">
-                  <h1>Top Rated Movies</h1>
+                  <h1>Filter Movies</h1>
+                </div>
+                <div className="classic">
+                  <select onChange={(event) => setGenre(event.target.value)}>
+                    <option value="28">Action</option>
+                    <option value="12">Adventure</option>
+                    <option value="16">Animation</option>
+                    <option value="35">Comedy</option>
+                    <option value="80">Crime</option>
+                    <option value="18">Drama</option>
+                    <option value="10751">Family</option>
+                    <option value="14">Fantasy</option>
+                    <option value="36">History</option>
+                    <option value="27">Horror</option>
+                    <option value="9648">Mystery</option>
+                    <option value="10749">Romance</option>
+                    <option value="878">Science Fiction</option>
+                    <option value="53">Thriller</option>
+                    <option value="10752">War</option>
+                  </select>
+                  <button className="btn btn-primary btn-filter" onClick={filter} type="submit">Filter</button>
                 </div>
                 <div className="row">
-                  {args.top_rated_movie.map((item) => (
+                  {filterMovie.map((item) => (
                     <div className="card-view">
                       <div className="card-header">
                         <Link to={`/detail/${item.id_movie}`}><img src={item.poster_path} alt="" /></Link>
@@ -57,4 +90,4 @@ function TopRated() {
   );
 }
 
-export default TopRated;
+export default Filter;

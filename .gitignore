@@ -7,8 +7,6 @@ __pycache__
 /node_modules
 /.pnp
 .pnp.js
-client_secret.json
-clientSecrets.json
 
 # testing
 /coverage

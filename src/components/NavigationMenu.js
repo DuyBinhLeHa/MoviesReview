@@ -1,20 +1,18 @@
-/* eslint-disable no-undef */
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function NavigationMenu() {
-  const args = JSON.parse(document.getElementById('data').text);
-  const [userName, setUserName] = useState();
-  const newUsername = useLocation();
+  const [name, setName] = useState('');
 
   useEffect(() => {
-    console.log(newUsername.state);
-    if (newUsername.state) {
-      setUserName(newUsername.state);
-    } else {
-      console.log('bbbb');
-      setUserName(args.username);
-    }
+    fetch('/get_username', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then((response) => response.json()).then((data) => {
+      setName(data.username);
+    });
   }, []);
 
   return (
@@ -26,7 +24,7 @@ function NavigationMenu() {
               <div>
                 Welcome,
                 {' '}
-                {userName}
+                {name}
               </div>
             </div>
           </li>
@@ -51,16 +49,11 @@ function NavigationMenu() {
               </div>
             </div>
           </li>
-        </ul>
-
-        <hr />
-
-        <ul className="nav flex-column mb-2">
           <li className="nav-item">
             <div className="nav-link">
-              <img src="https://img.icons8.com/ios/32/000000/contact-card.png" alt="" />
+              <img src="https://img.icons8.com/ios/32/000000/filter--v1.png" alt="" />
               <div>
-                <Link to="/contact">Contact</Link>
+                <Link to="/filter">Filter Movies</Link>
               </div>
             </div>
           </li>
@@ -69,6 +62,22 @@ function NavigationMenu() {
         <hr />
 
         <ul className="nav flex-column mb-2">
+          <li className="nav-item">
+            <div className="nav-link">
+              <img src="https://img.icons8.com/material-outlined/32/000000/like--v1.png" alt="" />
+              <div>
+                <Link to="/favorite">Favorite Movies</Link>
+              </div>
+            </div>
+          </li>
+          <li className="nav-item">
+            <div className="nav-link">
+              <img src="https://img.icons8.com/ios/32/000000/contact-card.png" alt="" />
+              <div>
+                <Link to="/contact">Contact</Link>
+              </div>
+            </div>
+          </li>
           <li className="nav-item">
             <div className="nav-link">
               <img src="https://img.icons8.com/ios/32/000000/settings.png" alt="" />

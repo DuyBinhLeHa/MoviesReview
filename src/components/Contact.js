@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import '../style/Contact.css';
@@ -20,9 +21,7 @@ function Contact() {
         message,
       };
 
-      emailjs.send(serviceId, templateId, templateParams, userId)
-        .then((response) => console.log(response))
-        .then((error) => console.log(error));
+      emailjs.send(serviceId, templateId, templateParams, userId);
 
       setName('');
       setEmail('');
@@ -34,7 +33,7 @@ function Contact() {
   };
 
   return (
-    <div className="TopRated">
+    <div className="Contact">
       <div className="container p-0">
         <ToolBar />
         <div className="container-fluid">

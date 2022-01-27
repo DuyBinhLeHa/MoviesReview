@@ -1,30 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './style/bootstrap.min.css';
-import './App.css';
-import SearchBar from './components/SearchBar';
-import NavigationMenu from './components/NavigationMenu';
+import ToolBar from './Toolbar';
+import NavigationMenu from './NavigationMenu';
 
-function App() {
-  const args = JSON.parse(document.getElementById('data').text);
+function Favorite() {
+  const [allFavorite, setAllFavorite] = useState([]);
+
+  useEffect(() => {
+    fetch('/all_favorite', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then((response) => response.json()).then((data) => {
+      const result = JSON.parse(data.all_favorite);
+      setAllFavorite(result.favorite);
+    });
+  }, []);
 
   return (
-    <div className="App">
+    <div className="Favorite">
       <div className="container p-0">
-        <SearchBar />
+        <ToolBar />
         <div className="container-fluid">
           <div className="row">
             <NavigationMenu />
             <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4 movie_list">
               <div className="pt-8 pb-2 mb-3 border-bottom">
                 <div className="row">
-                  <h1>Popular Movies</h1>
+                  <h1>Favorite Movies</h1>
                 </div>
                 <div className="row">
-                  {args.popular_movie.map((item) => (
+                  {allFavorite.map((item) => (
                     <div className="card-view">
                       <div className="card-header">
-                        <Link to={`/detail/${item.id_movie}`}><img src={item.poster_path} alt="" /></Link>
+                        <Link to={`/detail/${item.movie_id}`}><img src={item.poster_path} alt="" /></Link>
                       </div>
                       <div className="card-movie-content">
                         <div className="card-movie-content-head">
@@ -57,4 +67,4 @@ function App() {
   );
 }
 
-export default App;
+export default Favorite;
